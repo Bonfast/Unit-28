@@ -1,152 +1,232 @@
+# Тест-кейса 1: Авторизация через мобильный телефон и пароль
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import time
-
-# Инициализация драйвера браузера (например, Chrome)
 driver = webdriver.Chrome()
 
-# Тест-кейс 1: Авторизация через мобильный телефон и пароль
 def test_case_1():
     driver.get("https://b2c.passport.rt.ru")
-    mobile_input = driver.find_element_by_name("mobile")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    mobile_input.send_keys("ваш_номер_телефона")
-    password_input.send_keys("ваш_пароль")
+    
+    phone_tab = driver.find_element_by_id("t-btn-tab-phone")
+    phone_tab.click()
+    
+    mobile_input = driver.find_element_by_id("username")
+    mobile_input.send_keys("номер_телефона")
+    
+    password_input = driver.find_element_by_id("password")
+    password_input.send_keys("пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка успешной авторизации (зависит от вашего сайта)
+test_case_1()
+driver.quit()
+
 
 # Тест-кейс 2: Авторизация через мобильный телефон и неправильный пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_2():
     driver.get("https://b2c.passport.rt.ru")
-    mobile_input = driver.find_element_by_name("mobile")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    mobile_input.send_keys("ваш_номер_телефона")
+    
+    phone_tab = driver.find_element_by_id("t-btn-tab-phone")
+    phone_tab.click()
+    
+    mobile_input = driver.find_element_by_id("username")
+    mobile_input.send_keys("номер_телефона")
+    
+    password_input = driver.find_element_by_id("password")
     password_input.send_keys("неправильный_пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка появления сообщения об ошибке (зависит от вашего сайта)
+test_case_2()
+driver.quit()
+
 
 # Тест-кейс 3: Авторизация через электронную почту и пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_3():
     driver.get("https://b2c.passport.rt.ru")
-    email_input = driver.find_element_by_name("email")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    email_input.send_keys("ваш_адрес_почты")
-    password_input.send_keys("ваш_пароль")
+    
+    email_tab = driver.find_element_by_id("t-btn-tab-mail")
+    email_tab.click()
+ 
+    email_input = driver.find_element_by_id("username")
+    email_input.send_keys("адрес_почты")
+  
+    password_input = driver.find_element_by_id("password")
+    password_input.send_keys("пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка успешной авторизации (зависит от вашего сайта)
+test_case_3()
+driver.quit()
+
 
 # Тест-кейс 4: Авторизация через электронную почту и неправильный пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_4():
     driver.get("https://b2c.passport.rt.ru")
-    email_input = driver.find_element_by_name("email")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    email_input.send_keys("ваш_адрес_почты")
+    
+    email_tab = driver.find_element_by_id("t-btn-tab-mail")
+    email_tab.click()
+ 
+    email_input = driver.find_element_by_id("username")
+    email_input.send_keys("адрес_почты")
+  
+    password_input = driver.find_element_by_id("password")
     password_input.send_keys("неправильный_пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка появления сообщения об ошибке (зависит от вашего сайта)
+test_case_4()
+driver.quit()
+
 
 # Тест-кейс 5: Авторизация через логин и пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_5():
     driver.get("https://b2c.passport.rt.ru")
-    login_input = driver.find_element_by_name("login")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
+    
+    login_tab = driver.find_element_by_id("t-btn-tab-login")
+    login_tab.click()
 
-    login_input.send_keys("ваш_логин")
-    password_input.send_keys("ваш_пароль")
+    login_input = driver.find_element_by_id("username")
+    login_input.send_keys("логин")
+  
+    password_input = driver.find_element_by_id("password")
+    password_input.send_keys("пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка успешной авторизации (зависит от вашего сайта)
+test_case_5()
+driver.quit()
+
 
 # Тест-кейс 6: Авторизация через логин и неправильный пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_6():
     driver.get("https://b2c.passport.rt.ru")
-    login_input = driver.find_element_by_name("login")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
+    
+    login_tab = driver.find_element_by_id("t-btn-tab-login")
+    login_tab.click()
 
-    login_input.send_keys("ваш_логин")
+    login_input = driver.find_element_by_id("username")
+    login_input.send_keys("логин")
+  
+    password_input = driver.find_element_by_id("password")
     password_input.send_keys("неправильный_пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка появления сообщения об ошибке (зависит от вашего сайта)
+test_case_6()
+driver.quit()
+
 
 # Тест-кейс 7: Авторизация через лицевой счет и пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_7():
     driver.get("https://b2c.passport.rt.ru")
-    account_input = driver.find_element_by_name("account")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    account_input.send_keys("ваш_лицевой_счет")
-    password_input.send_keys("ваш_пароль")
+    
+    account_tab = driver.find_element_by_id("t-btn-tab-ls")
+    account_tab.click()
+ 
+    account_input = driver.find_element_by_id("username")
+    account_input.send_keys("лицевой_счет")
+    
+    password_input = driver.find_element_by_id("password")
+    password_input.send_keys("пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка успешной авторизации (зависит от вашего сайта)
+test_case_7()
+driver.quit()
+
 
 # Тест-кейс 8: Авторизация через лицевой счет и неправильный пароль
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_8():
     driver.get("https://b2c.passport.rt.ru")
-    account_input = driver.find_element_by_name("account")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
-
-    account_input.send_keys("ваш_лицевой_счет")
+    
+    account_tab = driver.find_element_by_id("t-btn-tab-ls")
+    account_tab.click()
+ 
+    account_input = driver.find_element_by_id("username")
+    account_input.send_keys("лицевой_счет")
+    
+    password_input = driver.find_element_by_id("password")
     password_input.send_keys("неправильный_пароль")
+    
+    login_button = driver.find_element_by_id("kc-login")
     login_button.click()
 
-    # Проверка появления сообщения об ошибке (зависит от вашего сайта)
+test_case_8()
+driver.quit()
 
-# Тест-кейс 9: Восстановление пароля через кнопку "Забыли пароль"
+# Тест-кейс 9: Восстановление пароля через кнопку "Забыл пароль"
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_9():
     driver.get("https://b2c.passport.rt.ru")
-    forgot_password_link = driver.find_element_by_link_text("Забыли пароль")
+    forgot_password_link = driver.find_element_by_id("forgot_password")
     forgot_password_link.click()
+    
+    phone_input = driver.find_element_by_id("username")
+    phone_input.send_keys("номер_телефона")
+    
+    captcha_input = driver.find_element_by_id("captcha")
+    captcha_input.send_keys("код_капчи")
+    
+    continue_button = driver.find_element_by_id("reset")
+    continue_button.click()
 
-    # Здесь следует добавить код для ввода адреса электронной почты или номера телефона и выполнения восстановления пароля.
+test_case_9()
+driver.quit()
 
-    # Проверка появления сообщения с инструкциями по восстановлению (зависит от вашего сайта)
 
-# Тест-кейс 10: Восстановление пароля через настройки
+# Тест-кейс 10: Восстановление пароля через настройки, уже авторизованным пользователем
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 def test_case_10():
     driver.get("https://b2c.passport.rt.ru")
-    login_input = driver.find_element_by_name("login")
-    password_input = driver.find_element_by_name("password")
-    login_button = driver.find_element_by_xpath("//button[text()='Войти']")
     
-    # Здесь следует добавить код для авторизации, если требуется
-
-    # Перейти в настройки аккаунта
-    settings_link = driver.find_element_by_link_text("Настройки")
-    settings_link.click()
-
-    # Найти раздел "Настройка пароля" и выполнить изменение пароля.
+    lk_button = driver.find_element_by_id("lk-btn")
+    lk_button.click()
+  
+    edit_button = driver.find_element_by_id("user_contacts_edit")
+    edit_button.click()
     
-    # Проверка успешного изменения пароля (зависит от вашего сайта)
+    current_password_input = driver.find_element_by_id("current_password")
+    current_password_input.send_keys("текущий_пароль")
+    
+    new_password_input = driver.find_element_by_id("new_password")
+    new_password_input.send_keys("новый_пароль")
 
-# Запуск всех тест-кейсов
-test_case_1()
-test_case_2()
-test_case_3()
-test_case_4()
-test_case_5()
-test_case_6()
-test_case_7()
-test_case_8()
-test_case_9()
+    confirm_password_input = driver.find_element_by_id("confirm_password")
+    confirm_password_input.send_keys("новый_пароль")
+    
+    save_button = driver.find_element_by_id("password_save")
+    save_button.click()
+
 test_case_10()
-
-# Завершение сеанса браузера
 driver.quit()
